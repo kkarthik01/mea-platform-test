@@ -11,12 +11,17 @@ ACTIONS
 
 //Action type constants
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER'
-
+const DECREMENT_COUNTER = 'DECREMENT_COUNTER'
 //Action creators - Functions which return action object
 const incrementCounter = () => ({
-    type: INCREMENT_COUNTER
+    type: INCREMENT_COUNTER,
+    payload: count
 })
 
+
+const decrementCounter = () => ({
+    type: DECREMENT_COUNTER
+})
 /*
 
 REDUCER FUNCTION
@@ -34,6 +39,10 @@ const reducer = (state = initialState, action) => {
             return {
                 count : state.count + 1
             }
+        case DECREMENT_COUNTER:
+            return {
+                count: state.count - 1
+            }
         default:
             return state
     }
@@ -41,4 +50,25 @@ const reducer = (state = initialState, action) => {
 
 let store = createStore(reducer)
 
-store.subscribe(() => console.log(store.getState()))
+let unsubscribe = store.subscribe(() => { })
+
+console.log(store.getState())
+
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+store.dispatch(incrementCounter())
+
+console.log(store.getState())
+
+store.dispatch(decrementCounter())
+console.log(store.getState())
+
+store.dispatch(decrementCounter())
+console.log(store.getState())
+
+
+store.dispatch(decrementCounter())
+console.log(store.getState())
+
+unsubscribe()
