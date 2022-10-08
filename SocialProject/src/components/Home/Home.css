@@ -1,0 +1,35 @@
+.photo-div{
+    margin-bottom: 20px;
+}
+
+.photo-img{
+    height: 250px;
+}
+
+.spinner-div{
+    margin: 50px auto;
+}
+
+/* .container-div{
+    /* width: 400px;  */
+/* .posts-section{
+    width: 600px;
+} */
+.post-header{
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-btn-outer{
+    text-align: right;
+}
+
+.action-btn-outer .btn{
+    margin-left: 10px;
+}
+
+.chat-list-item, .member-active-list{
+    text-align: left;
+}
