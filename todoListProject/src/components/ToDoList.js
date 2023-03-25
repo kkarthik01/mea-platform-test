@@ -13,7 +13,7 @@ const getList = () => {
     }
 }
 function ToDoList() {
-  const [toDoList, setToDoList] = useState(getList());
+  const [toDoList,  ] = useState(getList());
 
   const [inputName, setInputName] = useState("");
   const [inputTitle, setInputTitle] = useState("");
